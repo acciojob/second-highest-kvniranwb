@@ -1,10 +1,13 @@
 function secondHighest(arr) {
-    if (!arr || arr.length < 2) return -Infinity;
+    if (!Array.isArray(arr) || arr.length < 2) return -Infinity;
 
     let max = -Infinity;
     let secondMax = -Infinity;
 
-    for (let num of arr) {
+    for (let val of arr) {
+        const num = Number(val);
+        if (Number.isNaN(num)) continue;
+
         if (num > max) {
             secondMax = max;
             max = num;
@@ -15,3 +18,11 @@ function secondHighest(arr) {
 
     return secondMax;
 }
+
+const arr = [];
+
+for (let i = 0; i < 6; i++) {
+    arr.push(Number(prompt("Enter number")));
+}
+
+alert(secondHighest(arr));
