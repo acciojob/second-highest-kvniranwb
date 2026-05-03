@@ -19,10 +19,13 @@ function secondHighest(arr) {
     return secondMax;
 }
 
-const arr = [];
+// 👇 THIS PART IS WHAT YOU ARE MISSING
+window.onload = function () {
+    const arr = [];
 
-for (let i = 0; i < 6; i++) {
-    arr.push(Number(prompt("Enter number")));
-}
+    for (let i = 0; i < 6; i++) {
+        arr.push(Number(prompt("Enter number")));
+    }
 
-alert(secondHighest(arr));
+    alert(secondHighest(arr));
+};
